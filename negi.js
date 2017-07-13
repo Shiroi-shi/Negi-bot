@@ -47,14 +47,13 @@ client.on('message', message => {
     if (!voiceChannel || voiceChannel.type !== 'voice') return message.reply('Can\'t connect to voice channel.');
     voiceChannel.join()
       .then(connnection => {});
-    let stream = yt(args[1], {
-      filter: 'audioonly',
-    });
-    stream.on('error', function () {
-      message.reply("Je n'ai pas réussi à lire cette vidéo :(");
-      message.guild.voiceConnection.disconnect();
-    });
-    const dispatcher = message.guild.voiceConnection.playStream(stream);
+    let stream = yt('https://www.youtube.com/watch?v=atuFSv2bLa8', { audioonly: true })
+.on('error', err => {
+console.error('Error occurred when streaming video:', err);
+console.log(err);
+});
+console.log(yt.getInfo('https://www.youtube.com/watch?v=atuFSv2bLa8'));
+    const dispatcher = message.guild.voiceConnection.playStream(stream, { passes : PASSES });
     let collector = message.channel.createCollector(m => m);
     collector.on('collect', m => {
       if (m.content.startsWith(config.prefix + 'pause')) {

@@ -11,13 +11,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Shiroi-shi",
-  "license": "la license",
+  "license": "GPL-3.0",
   "dependencies": {
     "cleverbot-node": "^0.3.11",
     "cleverbot.io": "^1.0.4",
     "discord.js": "^10.0.1",
     "ffmpeg": "0.0.4",
-    "node-opus": "^0.2.4",
+    "node-opus": "^0.2.6",
     "opusscript": "0.0.1",
     "ytdl-core": "^0.14.4"
   }
