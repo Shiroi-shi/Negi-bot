@@ -57,15 +57,15 @@ client.on('message', message => {
     const voiceChannel = message.member.voiceChannel;
     if (!voiceChannel || voiceChannel.type !== 'voice') return message.reply(' I can\'t connect to a voice channel.');
     voiceChannel.join()
-      .then(connnection => {
+      .then(connection => {
         let stream = yt(args[1], {
           filter: 'audioonly',
         });
         stream.on('error', function () {
           message.reply("Je n'ai pas réussi à lire cette vidéo :(");
-          message.guild.voiceConnection.disconnect();
+          connection.disconnect();
         });
-        const dispatcher = message.guild.voiceConnection.playStream(stream, { passes: PASSES });
+        const dispatcher = connection.playStream(stream);
         let collector = message.channel.createCollector(m => m);
         collector.on('collect', m => {
           if (m.content.startsWith(config.prefix + 'pause')) {
@@ -87,7 +87,7 @@ client.on('message', message => {
           }
         });
         dispatcher.on('end', () => {
-          message.guild.voiceConnection.disconnect();
+          connection.disconnect();
         });
       });
   }
