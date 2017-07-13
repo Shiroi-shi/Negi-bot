@@ -18,12 +18,12 @@ client.on('message', message => {
   // Exit and stop if it's not there
   if (message.content.startsWith('<@332511504404316171>')) {
     clbot.write(message.content, (response) => {
-        message.channel.startTyping();
-        setTimeout(() => {
-          message.channel.send(response.output).catch(console.error);
-          message.channel.stopTyping();
-        }, Math.random() * (1 - 3) + 1 * 500);
-      })
+      message.channel.startTyping();
+      setTimeout(() => {
+        message.channel.send(response.output).catch(console.error);
+        message.channel.stopTyping();
+      }, Math.random() * (1 - 3) + 1 * 500);
+    })
   }
   if (!message.content.startsWith(config.prefix) || message.author.bot) return;
   if (message.content.startsWith(config.prefix + 'ping')) {
@@ -38,8 +38,17 @@ client.on('message', message => {
   }
   if (message.content.startsWith(config.prefix + 'leave')) {
     const voiceChannel = message.member.voiceChannel;
-    voiceChannel.leave();
+    if (voiceChannel)
+      voiceChannel.leave();
     console.log('Leaving #' + voiceChannel.name + '!');
+  }
+  if (message.content.startsWith(config.prefix + 'heal')) {
+    const voiceChannel = message.member.voiceChannel;
+    voiceChannel.join()
+      .then(connection => {
+        const dispatcher = connection.playFile('./sounds/healing.ogg');
+      })
+      .catch(console.error);
   }
   if (message.content.startsWith(config.prefix + 'play')) {
     let args = message.content.split(' ');
