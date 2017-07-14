@@ -15,7 +15,7 @@ client.on('ready', () => {
 
 client.on('message', message => {
 
-  // Exit and stop if it's not there
+  /* cleverbot */
   if (message.content.startsWith('<@332511504404316171>')) {
     clbot.write(message.content, (response) => {
       message.channel.startTyping();
@@ -29,6 +29,8 @@ client.on('message', message => {
   if (message.content.startsWith(config.prefix + 'ping')) {
     message.reply('Pong !');
   }
+
+  /* join voice channel */
   if (message.content.startsWith(config.prefix + 'join')) {
     const voiceChannel = message.member.voiceChannel;
     if (!voiceChannel || voiceChannel.type !== 'voice') return message.reply('Can\'t connect to voice channel.');
@@ -36,12 +38,16 @@ client.on('message', message => {
       .then(connection => console.log('Connected to #' + voiceChannel.name + '!'))
       .catch(console.error);
   }
+
+  /* leave voice channel */
   if (message.content.startsWith(config.prefix + 'leave')) {
     const voiceChannel = message.member.voiceChannel;
     if (voiceChannel)
       voiceChannel.leave();
     console.log('Leaving #' + voiceChannel.name + '!');
   }
+
+  /* heal sound */
   if (message.content.startsWith(config.prefix + 'heal')) {
     const voiceChannel = message.member.voiceChannel;
     if (voiceChannel)
@@ -52,6 +58,116 @@ client.on('message', message => {
       })
       .catch(console.error);
   }
+
+    /* angry sound */
+  if (message.content.startsWith(config.prefix + 'angry')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (voiceChannel)
+      voiceChannel.join()
+      .then(connection => {
+        const dispatcher = connection.playFile('./sounds/angry.ogg');
+        console.log("Angry");
+      })
+      .catch(console.error);
+  }
+
+    /* boop sound */
+  if (message.content.startsWith(config.prefix + 'boop')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (voiceChannel)
+      voiceChannel.join()
+      .then(connection => {
+        const dispatcher = connection.playFile('./sounds/boop.ogg');
+        console.log("Boop");
+      })
+      .catch(console.error);
+  }
+
+    /* boost sound */
+  if (message.content.startsWith(config.prefix + 'boost')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (voiceChannel)
+      voiceChannel.join()
+      .then(connection => {
+        const dispatcher = connection.playFile('./sounds/boost.mp3');
+        console.log("Speeeed boost");
+      })
+      .catch(console.error);
+  }
+
+    /* mada sound */
+  if (message.content.startsWith(config.prefix + 'mada')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (voiceChannel)
+      voiceChannel.join()
+      .then(connection => {
+        const dispatcher = connection.playFile('./sounds/mada.ogg');
+        console.log("Mada mada");
+      })
+      .catch(console.error);
+  }
+
+    /* meizing sound */
+  if (message.content.startsWith(config.prefix + 'ameizing')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (voiceChannel)
+      voiceChannel.join()
+      .then(connection => {
+        const dispatcher = connection.playFile('./sounds/meizing.mp3');
+        console.log("A-mei-zing");
+      })
+      .catch(console.error);
+  }
+
+    /* noon sound */
+  if (message.content.startsWith(config.prefix + 'noon')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (voiceChannel)
+      voiceChannel.join()
+      .then(connection => {
+        const dispatcher = connection.playFile('./sounds/noon.ogg');
+        console.log("It's hiiiigh noon");
+      })
+      .catch(console.error);
+  }
+
+    /* oulala sound */
+  if (message.content.startsWith(config.prefix + 'oulala')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (voiceChannel)
+      voiceChannel.join()
+      .then(connection => {
+        const dispatcher = connection.playFile('./sounds/oulala.ogg');
+        console.log("Ouhlala");
+      })
+      .catch(console.error);
+  }
+
+    /* sake sound */
+  if (message.content.startsWith(config.prefix + 'sake')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (voiceChannel)
+      voiceChannel.join()
+      .then(connection => {
+        const dispatcher = connection.playFile('./sounds/sake.ogg');
+        console.log("Sake!");
+      })
+      .catch(console.error);
+  }
+
+    /* yay sound */
+  if (message.content.startsWith(config.prefix + 'yay')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (voiceChannel)
+      voiceChannel.join()
+      .then(connection => {
+        const dispatcher = connection.playFile('./sounds/yay.mp3');
+        console.log("Yay");
+      })
+      .catch(console.error);
+  }
+
+  /* Play video command */
   if (message.content.startsWith(config.prefix + 'play')) {
     let args = message.content.split(' ');
     const voiceChannel = message.member.voiceChannel;
@@ -64,6 +180,9 @@ client.on('message', message => {
         stream.on('error', function () {
           message.reply("Je n'ai pas réussi à lire cette vidéo :(");
           connection.disconnect();
+        });
+        yt.getInfo(args[1], function (err, info) {
+          console.log("Playing " + info.title);
         });
         const dispatcher = connection.playStream(stream);
         let collector = message.channel.createCollector(m => m);
