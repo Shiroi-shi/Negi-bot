@@ -10,7 +10,8 @@ clbot.configure({
 });
 
 client.on('ready', () => {
-  console.log('I am ready!');
+  console.log('I\'m here!');
+  client.user.setGame('with Mei');
 });
 
 client.on('message', message => {
@@ -39,6 +40,118 @@ client.on('message', message => {
       .catch(console.error);
   }
 
+  /* commands list */
+  if (message.content.startsWith(config.prefix + 'help')) {
+    const data = {
+      "title": "Negi help:",
+      "color": 9699539,
+      "fields": [{
+          "name": ">leave",
+          "value": "Leave current voice channel"
+        },
+        {
+          "name": ">heal",
+          "value": "I need healing!"
+        },
+        {
+          "name": ">angry",
+          "value": "Why are you so angry?"
+        },
+        {
+          "name": ">boop",
+          "value": "Boop!"
+        },
+        {
+          "name": ">boost",
+          "value": "Speed boost"
+        },
+        {
+          "name": ">mada",
+          "value": "Mada mada"
+        },
+        {
+          "name": ">ameizing",
+          "value": "A-mei-zing"
+        },
+        {
+          "name": ">noon",
+          "value": "It's high noon!"
+        },
+        {
+          "name": ">oulala",
+          "value": "Ouhlala"
+        },
+        {
+          "name": ">scatter",
+          "value": "Scatter!"
+        },
+        {
+          "name": ">sake",
+          "value": "Sake!"
+        },
+        {
+          "name": ">play youtubeURL",
+          "value": "Play video sound"
+        }
+      ]
+    };
+    message.channel.send("**Here is the commands you can use:** ", {embed: {
+      "title": "Negi help:",
+      "color": 9699539,
+      "fields": [{
+          "name": ">leave",
+          "value": "Leave current voice channel"
+        },
+        {
+          "name": ">heal",
+          "value": "I need healing!"
+        },
+        {
+          "name": ">angry",
+          "value": "Why are you so angry?"
+        },
+        {
+          "name": ">boop",
+          "value": "Boop!"
+        },
+        {
+          "name": ">boost",
+          "value": "Speed boost"
+        },
+        {
+          "name": ">mada",
+          "value": "Mada mada"
+        },
+        {
+          "name": ">ameizing",
+          "value": "A-mei-zing"
+        },
+        {
+          "name": ">noon",
+          "value": "It's high noon!"
+        },
+        {
+          "name": ">oulala",
+          "value": "Ouhlala"
+        },
+        {
+          "name": ">scatter",
+          "value": "Scatter!"
+        },
+        {
+          "name": ">sake",
+          "value": "Sake!"
+        },
+        {
+          "name": ">play youtubeURL",
+          "value": "Play video sound"
+        }
+      ]
+    }
+  });
+    console.log("help");
+  }
+
   /* leave voice channel */
   if (message.content.startsWith(config.prefix + 'leave')) {
     const voiceChannel = message.member.voiceChannel;
@@ -59,7 +172,7 @@ client.on('message', message => {
       .catch(console.error);
   }
 
-    /* angry sound */
+  /* angry sound */
   if (message.content.startsWith(config.prefix + 'angry')) {
     const voiceChannel = message.member.voiceChannel;
     if (voiceChannel)
@@ -71,7 +184,7 @@ client.on('message', message => {
       .catch(console.error);
   }
 
-    /* boop sound */
+  /* boop sound */
   if (message.content.startsWith(config.prefix + 'boop')) {
     const voiceChannel = message.member.voiceChannel;
     if (voiceChannel)
@@ -83,7 +196,7 @@ client.on('message', message => {
       .catch(console.error);
   }
 
-    /* boost sound */
+  /* boost sound */
   if (message.content.startsWith(config.prefix + 'boost')) {
     const voiceChannel = message.member.voiceChannel;
     if (voiceChannel)
@@ -95,7 +208,7 @@ client.on('message', message => {
       .catch(console.error);
   }
 
-    /* mada sound */
+  /* mada sound */
   if (message.content.startsWith(config.prefix + 'mada')) {
     const voiceChannel = message.member.voiceChannel;
     if (voiceChannel)
@@ -107,7 +220,7 @@ client.on('message', message => {
       .catch(console.error);
   }
 
-    /* meizing sound */
+  /* meizing sound */
   if (message.content.startsWith(config.prefix + 'ameizing')) {
     const voiceChannel = message.member.voiceChannel;
     if (voiceChannel)
@@ -119,7 +232,7 @@ client.on('message', message => {
       .catch(console.error);
   }
 
-    /* noon sound */
+  /* noon sound */
   if (message.content.startsWith(config.prefix + 'noon')) {
     const voiceChannel = message.member.voiceChannel;
     if (voiceChannel)
@@ -131,7 +244,7 @@ client.on('message', message => {
       .catch(console.error);
   }
 
-    /* oulala sound */
+  /* oulala sound */
   if (message.content.startsWith(config.prefix + 'oulala')) {
     const voiceChannel = message.member.voiceChannel;
     if (voiceChannel)
@@ -143,7 +256,19 @@ client.on('message', message => {
       .catch(console.error);
   }
 
-    /* sake sound */
+  /* scatter sound */
+  if (message.content.startsWith(config.prefix + 'scatter')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (voiceChannel)
+      voiceChannel.join()
+      .then(connection => {
+        const dispatcher = connection.playFile('./sounds/scatter.ogg');
+        console.log("Scatter");
+      })
+      .catch(console.error);
+  }
+
+  /* sake sound */
   if (message.content.startsWith(config.prefix + 'sake')) {
     const voiceChannel = message.member.voiceChannel;
     if (voiceChannel)
@@ -155,17 +280,7 @@ client.on('message', message => {
       .catch(console.error);
   }
 
-    /* yay sound */
-  if (message.content.startsWith(config.prefix + 'yay')) {
-    const voiceChannel = message.member.voiceChannel;
-    if (voiceChannel)
-      voiceChannel.join()
-      .then(connection => {
-        const dispatcher = connection.playFile('./sounds/yay.mp3');
-        console.log("Yay");
-      })
-      .catch(console.error);
-  }
+
 
   /* Play video command */
   if (message.content.startsWith(config.prefix + 'play')) {
@@ -191,18 +306,22 @@ client.on('message', message => {
             message.channel.send('paused').then(() => {
               dispatcher.pause();
             });
+            console.log("Pause");
           } else if (m.content.startsWith(config.prefix + 'resume')) {
             message.channel.send('resumed').then(() => {
               dispatcher.resume();
             });
+            console.log("Resumed");
           } else if (m.content.startsWith(config.prefix + 'volume+')) {
             if (Math.round(dispatcher.volume * 50) >= 100) return message.channel.send(`Volume: ${Math.round(dispatcher.volume*50)}%`);
             dispatcher.setVolume(Math.min((dispatcher.volume * 50 + (2 * (m.content.split('+').length - 1))) / 50, 2));
             message.channel.send(`Volume: ${Math.round(dispatcher.volume*50)}%`);
+            console.log("Volume+");
           } else if (m.content.startsWith(config.prefix + 'volume-')) {
             if (Math.round(dispatcher.volume * 50) <= 0) return message.channel.send(`Volume: ${Math.round(dispatcher.volume*50)}%`);
             dispatcher.setVolume(Math.max((dispatcher.volume * 50 - (2 * (m.content.split('-').length - 1))) / 50, 0));
             message.channel.send(`Volume: ${Math.round(dispatcher.volume*50)}%`);
+            console.log("Volume-");
           }
         });
         dispatcher.on('end', () => {
