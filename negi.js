@@ -43,7 +43,7 @@ client.on('message', message => {
 
   /* commands list */
   if (message.content.startsWith(config.prefix + 'help')) {
-    message.channel.sendMessage("**Here is the commands you can use:** ", {
+    message.channel.send("**Here is the commands you can use:** ", {
       embed: {
         "title": "Negi help:",
         "color": 9699539,
