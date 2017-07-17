@@ -256,6 +256,54 @@ client.on('message', message => {
       .catch(console.error);
   }
 
+  /* genjo sound */
+  if (message.content.startsWith(config.prefix + 'genjo')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (voiceChannel)
+      voiceChannel.join()
+      .then(connection => {
+        const dispatcher = connection.playFile('./sounds/genjo.ogg');
+        console.log("Genjo ult");
+      })
+      .catch(console.error);
+  }
+
+  /* Pharah ult sound */
+  if (message.content.startsWith(config.prefix + 'justice')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (voiceChannel)
+      voiceChannel.join()
+      .then(connection => {
+        const dispatcher = connection.playFile('./sounds/justice.ogg');
+        console.log("Justice rains from above!");
+      })
+      .catch(console.error);
+  }
+
+  /* Mercy ult sound */
+  if (message.content.startsWith(config.prefix + 'mercy')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (voiceChannel)
+      voiceChannel.join()
+      .then(connection => {
+        const dispatcher = connection.playFile('./sounds/mercy.ogg');
+        console.log("Heroes never dies!");
+      })
+      .catch(console.error);
+  }
+
+  /* Hanzo sound */
+  if (message.content.startsWith(config.prefix + 'hanzo')) {
+    const voiceChannel = message.member.voiceChannel;
+    if (voiceChannel)
+      voiceChannel.join()
+      .then(connection => {
+        const dispatcher = connection.playFile('./sounds/hanzo.ogg');
+        console.log("Hanzo ult");
+      })
+      .catch(console.error);
+  }
+
   /* scatter sound */
   if (message.content.startsWith(config.prefix + 'scatter')) {
     const voiceChannel = message.member.voiceChannel;
