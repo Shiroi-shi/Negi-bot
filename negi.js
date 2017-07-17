@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require("./config.json");
 const yt = require('ytdl-core');
+const booru = require('booru');
 var Cleverbot = require("cleverbot-node");
 const clbot = new Cleverbot;
 clbot.configure({
@@ -42,113 +43,77 @@ client.on('message', message => {
 
   /* commands list */
   if (message.content.startsWith(config.prefix + 'help')) {
-    const data = {
-      "title": "Negi help:",
-      "color": 9699539,
-      "fields": [{
-          "name": ">leave",
-          "value": "Leave current voice channel"
-        },
-        {
-          "name": ">heal",
-          "value": "I need healing!"
-        },
-        {
-          "name": ">angry",
-          "value": "Why are you so angry?"
-        },
-        {
-          "name": ">boop",
-          "value": "Boop!"
-        },
-        {
-          "name": ">boost",
-          "value": "Speed boost"
-        },
-        {
-          "name": ">mada",
-          "value": "Mada mada"
-        },
-        {
-          "name": ">ameizing",
-          "value": "A-mei-zing"
-        },
-        {
-          "name": ">noon",
-          "value": "It's high noon!"
-        },
-        {
-          "name": ">oulala",
-          "value": "Ouhlala"
-        },
-        {
-          "name": ">scatter",
-          "value": "Scatter!"
-        },
-        {
-          "name": ">sake",
-          "value": "Sake!"
-        },
-        {
-          "name": ">play youtubeURL",
-          "value": "Play video sound"
-        }
-      ]
-    };
-    message.channel.send("**Here is the commands you can use:** ", {embed: {
-      "title": "Negi help:",
-      "color": 9699539,
-      "fields": [{
-          "name": ">leave",
-          "value": "Leave current voice channel"
-        },
-        {
-          "name": ">heal",
-          "value": "I need healing!"
-        },
-        {
-          "name": ">angry",
-          "value": "Why are you so angry?"
-        },
-        {
-          "name": ">boop",
-          "value": "Boop!"
-        },
-        {
-          "name": ">boost",
-          "value": "Speed boost"
-        },
-        {
-          "name": ">mada",
-          "value": "Mada mada"
-        },
-        {
-          "name": ">ameizing",
-          "value": "A-mei-zing"
-        },
-        {
-          "name": ">noon",
-          "value": "It's high noon!"
-        },
-        {
-          "name": ">oulala",
-          "value": "Ouhlala"
-        },
-        {
-          "name": ">scatter",
-          "value": "Scatter!"
-        },
-        {
-          "name": ">sake",
-          "value": "Sake!"
-        },
-        {
-          "name": ">play youtubeURL",
-          "value": "Play video sound"
-        }
-      ]
-    }
-  });
+    message.channel.sendMessage("**Here is the commands you can use:** ", {
+      embed: {
+        "title": "Negi help:",
+        "color": 9699539,
+        "fields": [{
+            "name": ">leave",
+            "value": "Leave current voice channel"
+          },
+          {
+            "name": ">heal",
+            "value": "I need healing!"
+          },
+          {
+            "name": ">angry",
+            "value": "Why are you so angry?"
+          },
+          {
+            "name": ">boop",
+            "value": "Boop!"
+          },
+          {
+            "name": ">boost",
+            "value": "Speed boost"
+          },
+          {
+            "name": ">mada",
+            "value": "Mada mada"
+          },
+          {
+            "name": ">ameizing",
+            "value": "A-mei-zing"
+          },
+          {
+            "name": ">noon",
+            "value": "It's high noon!"
+          },
+          {
+            "name": ">oulala",
+            "value": "Ouhlala"
+          },
+          {
+            "name": ">scatter",
+            "value": "Scatter!"
+          },
+          {
+            "name": ">sake",
+            "value": "Sake!"
+          },
+          {
+            "name": ">genjo",
+            "value": "Genji ultimate"
+          },
+          {
+            "name": ">hanzo",
+            "value": "Hanzo ultimate"
+          },
+          {
+            "name": ">mercy",
+            "value": "Mercy ultimate"
+          },
+          {
+            "name": ">play youtubeURL",
+            "value": "Play video sound"
+          },
+          {
+            "name": ">justice",
+            "value": "Pharah ultimate"
+          }
+        ]
+      }
+    });
     console.log("help");
   }
 
@@ -328,7 +293,31 @@ client.on('message', message => {
       .catch(console.error);
   }
 
-
+  /* porn command */
+  if (message.content.startsWith(config.prefix + 'porn')) {
+    let args = message.content.split(' ');
+    booru.search("pa", [args[1]], {
+        limit: 1,
+        random: true
+      })
+      .then(booru.commonfy)
+      .then(images => {
+        console.log("porn");
+        //Log the direct link to each image 
+        for (let image of images) {
+          console.log(image.common.file_url)
+        }
+      })
+      .catch(err => {
+        if (err.name === 'booruError') {
+          //It's a custom error thrown by the package 
+          console.log(err.message)
+        } else {
+          //This means I messed up. Whoops. 
+          console.log(err)
+        }
+      })
+  }
 
   /* Play video command */
   if (message.content.startsWith(config.prefix + 'play')) {
