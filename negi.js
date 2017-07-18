@@ -306,6 +306,24 @@ client.on('message', message => {
         //Log the direct link to each image 
         for (let image of images) {
           console.log(image.common.file_url)
+
+          message.channel.send({
+            embed: {
+              "title": "link",
+              "url": image.common.file_url,
+              "color": 1703081,
+              "footer": {
+                "text": args[1]
+              },
+              "image": {
+                "url": image.common.file_url
+              },
+              "author": {
+                "name": "Hentai Negi",
+                "icon_url": "http://static3.fjcdn.com/comments/Blank+_73708e5664b4245deda152a8e2b710eb.png"
+              }
+            }
+          });
         }
       })
       .catch(err => {
