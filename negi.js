@@ -12,7 +12,9 @@ clbot.configure({
 
 client.on('ready', () => {
   console.log('I\'m here!');
-  client.user.setGame('with Mei');
+  client.user.setActivity('with Mei')
+      .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
+      .catch(console.error);
 });
 
 client.on('message', message => {
@@ -48,67 +50,67 @@ client.on('message', message => {
         "title": "Negi help:",
         "color": 9699539,
         "fields": [{
-            "name": ">leave",
+            "name": config.prefix + "leave",
             "value": "Leave current voice channel"
           },
           {
-            "name": ">heal",
+            "name": config.prefix + "heal",
             "value": "I need healing!"
           },
           {
-            "name": ">angry",
+            "name": config.prefix + "angry",
             "value": "Why are you so angry?"
           },
           {
-            "name": ">boop",
+            "name": config.prefix + "boop",
             "value": "Boop!"
           },
           {
-            "name": ">boost",
+            "name": config.prefix + "boost",
             "value": "Speed boost"
           },
           {
-            "name": ">mada",
+            "name": config.prefix + "mada",
             "value": "Mada mada"
           },
           {
-            "name": ">ameizing",
+            "name": config.prefix + "ameizing",
             "value": "A-mei-zing"
           },
           {
-            "name": ">noon",
+            "name": config.prefix + "noon",
             "value": "It's high noon!"
           },
           {
-            "name": ">oulala",
+            "name": config.prefix + "oulala",
             "value": "Ouhlala"
           },
           {
-            "name": ">scatter",
+            "name": config.prefix + "scatter",
             "value": "Scatter!"
           },
           {
-            "name": ">sake",
+            "name": config.prefix + "sake",
             "value": "Sake!"
           },
           {
-            "name": ">genjo",
+            "name": config.prefix + "genjo",
             "value": "Genji ultimate"
           },
           {
-            "name": ">hanzo",
+            "name": config.prefix + "hanzo",
             "value": "Hanzo ultimate"
           },
           {
-            "name": ">mercy",
+            "name": config.prefix + "mercy",
             "value": "Mercy ultimate"
           },
           {
-            "name": ">play youtubeURL",
+            "name": config.prefix + "play youtubeURL",
             "value": "Play video sound"
           },
           {
-            "name": ">justice",
+            "name": config.prefix + "justice",
             "value": "Pharah ultimate"
           }
         ]
