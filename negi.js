@@ -37,7 +37,10 @@ client.on('message', message => {
     /* make my bot talk */
     if (message.content.startsWith(config.prefix + 'msg') && message.author.id === config.ownerID) {
         let msg = message.content.substring(5);
-        message.reply(msg);
+        message.channel.send(msg);
+        message.delete()
+            .then(msg => console.log(`Deleted message from ${msg.author.username}`))
+            .catch(console.error);
     }
 
     /* join voice channel */
