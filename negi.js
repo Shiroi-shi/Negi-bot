@@ -417,11 +417,53 @@ client.on('message', message => {
                     "url": images[Math.floor(Math.random()*images.length)]
                 },
                 "author": {
-                    "name": message.author + " is orgasming",
+                    "name": message.author.username + " is orgasming",
                 }
             }
         });
+        console.log(message.author.username + " is orgasming");
     }
+
+    /* fuck */
+    if (message.content.startsWith(config.prefix + 'fuck')) {
+        let images = [
+            "https://imgur.com/8Z35ee1.gif",
+            "https://imgur.com/Z6aDXfE.gif",
+            "https://imgur.com/uTlNUFO.gif",
+            "https://imgur.com/urNYNcF.gif",
+            "https://imgur.com/Be1rTkf.gif"
+        ];
+        message.channel.send({
+            embed: {
+                "color": 1703081,
+                "image": {
+                    "url": images[Math.floor(Math.random()*images.length)]
+                },
+            }
+        });
+        console.log(message.author.username + " is fucking");
+    }
+
+        /* scream */
+        if (message.content.startsWith(config.prefix + 'scream')) {
+            let images = [
+                "https://imgur.com/UBtHVAy.gif",
+                "https://imgur.com/MrF1Fjc.gif",
+                "https://imgur.com/Ge7eGl8.gif",
+                "https://imgur.com/QtDPZPR.gif",
+                "https://imgur.com/redyuQo.gif",
+                "https://imgur.com/NSjPsYw.gif"
+            ];
+            message.channel.send({
+                embed: {
+                    "color": 1703081,
+                    "image": {
+                        "url": images[Math.floor(Math.random()*images.length)]
+                    },
+                }
+            });
+            console.log(message.author.username + " is screaming");
+        }
 });
 
 client.login(config.token);
