@@ -30,6 +30,8 @@ client.on('message', message => {
         })
     }
     if (!message.content.startsWith(config.prefix) || message.author.bot) return;
+
+    /* ping */
     if (message.content.startsWith(config.prefix + 'ping')) {
         message.reply('Pong !');
     }
@@ -394,6 +396,31 @@ client.on('message', message => {
                     connection.disconnect();
                 });
             });
+    }
+
+
+    /* REACTIONS */
+
+    /* gasm */
+    if (message.content.startsWith(config.prefix + 'gasm')) {
+        let images = [
+            "https://imgur.com/ri2lpss",
+            "https://imgur.com/hs0yJkN",
+            "https://imgur.com/oobuDxI",
+            "https://imgur.com/MxsWMCS",
+            "https://imgur.com/U0R3yl9"
+        ];
+        message.channel.send({
+            embed: {
+                "color": 1703081,
+                "image": {
+                    "url": images[Math.floor(Math.random()*images.length)]
+                },
+                "author": {
+                    "name": message.author + " is orgasming",
+                }
+            }
+        });
     }
 });
 
