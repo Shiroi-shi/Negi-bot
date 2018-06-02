@@ -404,11 +404,11 @@ client.on('message', message => {
     /* gasm */
     if (message.content.startsWith(config.prefix + 'gasm')) {
         let images = [
-            "https://imgur.com/ri2lpss",
-            "https://imgur.com/hs0yJkN",
-            "https://imgur.com/oobuDxI",
-            "https://imgur.com/MxsWMCS",
-            "https://imgur.com/U0R3yl9"
+            "https://imgur.com/ri2lpss.gif",
+            "https://imgur.com/hs0yJkN.gif",
+            "https://imgur.com/oobuDxI.gif",
+            "https://imgur.com/MxsWMCS.gif",
+            "https://imgur.com/U0R3yl9.gif"
         ];
         message.channel.send({
             embed: {
