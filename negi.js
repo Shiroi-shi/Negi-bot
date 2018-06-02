@@ -123,6 +123,18 @@ client.on('message', message => {
                     {
                         "name": config.prefix + "justice",
                         "value": "Pharah ultimate"
+                    },
+                    {
+                        "name": config.prefix + "gasm",
+                        "value": "Gasm reaction"
+                    },
+                    {
+                        "name": config.prefix + "fuck",
+                        "value": "( ͡° ͜ʖ ͡° )"
+                    },
+                    {
+                        "name": config.prefix + "scream",
+                        "value": "scream reaction"
                     }
                 ]
             }
