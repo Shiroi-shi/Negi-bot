@@ -643,12 +643,12 @@ client.on('message', message => {
             msg = message.author.username + " bites";
             for (let i = 1; i < args.length; i++) {
                 if (args[i].startsWith("<@!")) {
-                id = agrs[i].slice(3, args[i].length - 1)
+                id = args[i].slice(3, args[i].length - 1)
                 user = client.users.get(id)
                 msg += " " + user.username;
                 }
                 else if (args[i].startsWith("<@")) {
-                    id = agrs[i].slice(2, args[i].length - 1)
+                    id = args[i].slice(2, args[i].length - 1)
                     user = client.users.get(id)
                     msg += " " + user.username;
                 }
