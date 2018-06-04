@@ -71,7 +71,7 @@ client.on('message', message => {
                 },
                 {
                     "name": "Reactions/Actions",
-                    "value": "gasm, fuck, scream, kill, stroke, succ, dead, bite, eat"
+                    "value": "gasm, fuck, scream, kill, stroke, succ, dead, bite, eat, smug, glare"
                 },
                 ]
             }
@@ -666,7 +666,7 @@ client.on('message', message => {
             "https://imgur.com/cqKTGor.gif",
             "https://imgur.com/ecrXzhF.gif",
             "https://imgur.com/BwACL3Q.gif",
-            "https://imgur.com/ciUfYED.gif",
+            "https://imgur.com/nYrkF2L.gif",
             "https://imgur.com/5ScFV5p.gif",
             "https://imgur.com/QcRAZGc.gif",
             "https://imgur.com/rdg4Tvt.gif",
@@ -708,6 +708,61 @@ client.on('message', message => {
             }
         });
         console.log(message.author.username + " eats");
+    }
+
+    /* smug */
+    if (message.content.startsWith(config.prefix + 'smug')) {
+        let images = [
+            "https://imgur.com/BX3es9y.gif",
+            "https://imgur.com/wuIiWzj.gif",
+            "https://imgur.com/biE8BBV.gif",
+            "https://imgur.com/n4W7lUd.gif",
+            "https://imgur.com/acud58z.gif",
+            "https://imgur.com/oguKFyc.gif",
+            "https://imgur.com/j3JFoI0.gif",
+            "https://imgur.com/h6LrGXd.gif",
+            "https://imgur.com/qEb9KHx.gif",
+            "https://imgur.com/p3IA3qM.gif",
+            "https://imgur.com/wpeDUUW.gif",
+            "https://imgur.com/7F1FrwK.gif",
+            "https://imgur.com/qGPJNA2.gif",
+            "https://imgur.com/w2TUADR.gif"
+        ];
+        message.channel.send({
+            embed: {
+                "color": 1703081,
+                "image": {
+                    "url": images[Math.floor(Math.random() * images.length)]
+                },
+            }
+        });
+        console.log(message.author.username + " smug");
+    }
+
+    /* glare */
+    if (message.content.startsWith(config.prefix + 'glare')) {
+        let images = [
+            "https://imgur.com/JWJJeze.gif",
+            "https://imgur.com/gMPy6R8.gif",
+            "https://imgur.com/Vfyjkp0.gif",
+            "https://imgur.com/u3RX732.gif",
+            "https://imgur.com/3h10R5X.gif",
+            "https://imgur.com/6AK0xAT.gif",
+            "https://imgur.com/UlTD0Sf.gif",
+            "https://imgur.com/Px0D1PW.gif",
+            "https://imgur.com/aomXzLO.gif",
+            "https://imgur.com/mWUCdT3.gif",
+            "https://imgur.com/qxGcAWd.gif"
+        ];
+        message.channel.send({
+            embed: {
+                "color": 1703081,
+                "image": {
+                    "url": images[Math.floor(Math.random() * images.length)]
+                },
+            }
+        });
+        console.log(message.author.username + " glare");
     }
 
 });
