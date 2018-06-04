@@ -503,10 +503,10 @@ client.on('message', message => {
             "https://imgur.com/qfCrU9h.gif"
         ];
         if (args[1]) {
-            msg = message.author.username + " kill " + message.content.substring(6);
+            msg = message.author.username + " kills " + message.content.substring(6);
         }
         else {
-            msg = "Negi kill " + message.author.username;
+            msg = "Negi kills " + message.author.username;
         }
         message.channel.send({
             embed: {
@@ -552,17 +552,24 @@ client.on('message', message => {
         console.log(message.author.username + " is sucking");
     }
 
-    /* succ */
+    /* stroke */
     if (message.content.startsWith(config.prefix + 'stroke')) {
+        let args = message.content.split(' ');
         let images = [
-            "https://imgur.com/0ZtFlXq.gif",
-            "https://imgur.com/NJzmZ0O.gif",
-            "https://imgur.com/Zzx5hFj.gif",
-            "https://imgur.com/ZD6ibNr.gif",
-            "https://imgur.com/i5A9d7T.gif",
-            "https://imgur.com/wkV63dW.gif"
+            "https://imgur.com/Yh7BfUj.gif",
+            "https://imgur.com/gzFtMFV.gif",
+            "https://imgur.com/5MTuiF5.gif",
+            "https://imgur.com/ZOzYlvt.gif",
+            "https://imgur.com/ZhD6TNb.gif",
+            "https://imgur.com/JcXw7yq.gif",
+            "https://imgur.com/FHLRtPM.gif"
         ];
-            msg = message.author.username + " is having a stroke";
+        if (args[1]) {
+            msg = message.author.username + " is stroking " + message.content.substring(6);
+        }
+        else {
+            msg = "Negi strokes " + message.author.username;
+        }
         message.channel.send({
             embed: {
                 "color": 1703081,
@@ -574,7 +581,7 @@ client.on('message', message => {
                 }
             }
         });
-        console.log(message.author.username + " is having a stroke");
+        console.log(message.author.username + " is stroking");
     }
 
 
