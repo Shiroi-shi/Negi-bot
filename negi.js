@@ -59,94 +59,19 @@ client.on('message', message => {
         message.channel.send("**Here is the commands you can use:** ", {
             embed: {
                 "title": "Negi help:",
+                "description": "All commands start with the prefix \"**" + config.prefix + "**\" ```\nExample: n:dead```",
                 "color": 9699539,
                 "fields": [{
-                    "name": config.prefix + "leave",
-                    "value": "Leave current voice channel"
+                    "name": "Voice channels",
+                    "value": "join, leave"
                 },
                 {
-                    "name": config.prefix + "heal",
-                    "value": "I need healing!"
+                    "name": "Voice sounds",
+                    "value": "heal, angry, boop, boost, mada, ameizing, noon, oulala, scatter, sake, genjo, hanzo, mercy, justice"
                 },
                 {
-                    "name": config.prefix + "angry",
-                    "value": "Why are you so angry?"
-                },
-                {
-                    "name": config.prefix + "boop",
-                    "value": "Boop!"
-                },
-                {
-                    "name": config.prefix + "boost",
-                    "value": "Speed boost"
-                },
-                {
-                    "name": config.prefix + "mada",
-                    "value": "Mada mada"
-                },
-                {
-                    "name": config.prefix + "ameizing",
-                    "value": "A-mei-zing"
-                },
-                {
-                    "name": config.prefix + "noon",
-                    "value": "It's high noon!"
-                },
-                {
-                    "name": config.prefix + "oulala",
-                    "value": "Ouhlala"
-                },
-                {
-                    "name": config.prefix + "scatter",
-                    "value": "Scatter!"
-                },
-                {
-                    "name": config.prefix + "sake",
-                    "value": "Sake!"
-                },
-                {
-                    "name": config.prefix + "genjo",
-                    "value": "Genji ultimate"
-                },
-                {
-                    "name": config.prefix + "hanzo",
-                    "value": "Hanzo ultimate"
-                },
-                {
-                    "name": config.prefix + "mercy",
-                    "value": "Mercy ultimate"
-                },
-                {
-                    "name": config.prefix + "play youtubeURL",
-                    "value": "Play video sound"
-                },
-                {
-                    "name": config.prefix + "justice",
-                    "value": "Pharah ultimate"
-                },
-                {
-                    "name": config.prefix + "gasm",
-                    "value": "Gasm reaction"
-                },
-                {
-                    "name": config.prefix + "fuck",
-                    "value": "( ͡° ͜ʖ ͡° )"
-                },
-                {
-                    "name": config.prefix + "scream",
-                    "value": "scream reaction"
-                },
-                {
-                    "name": config.prefix + "kill",
-                    "value": "kill reaction"
-                },
-                {
-                    "name": config.prefix + "stroke",
-                    "value": "stroke reaction"
-                },
-                {
-                    "name": config.prefix + "succ",
-                    "value": "succ reaction"
+                    "name": "Reactions",
+                    "value": "gasm, fuck, scream, kill, stroke, succ, dead, bite"
                 },
                 ]
             }
@@ -460,7 +385,22 @@ client.on('message', message => {
             "https://i.imgur.com/X52oScm.jpg"
         ];
         if (args[1]) {
-            msg = message.author.username + " is fucking with " + message.content.substring(6);
+            msg = message.author.username + " is fucking with";
+            for (let i = 1; i < args.length; i++) {
+                if (args[i].startsWith("<@!")) {
+                id = args[i].slice(3, args[i].length - 1)
+                user = client.users.get(id)
+                msg += " " + user.username;
+                }
+                else if (args[i].startsWith("<@")) {
+                    id = args[i].slice(2, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
+                }
+                else {
+                    msg += " " + args[i];
+                }
+            }
         }
         else {
             msg = "Negi is fucking with " + message.author.username;
@@ -521,7 +461,22 @@ client.on('message', message => {
             "https://imgur.com/UPmlUjQ.gif"
         ];
         if (args[1]) {
-            msg = message.author.username + " kills " + message.content.substring(6);
+            msg = message.author.username + " kills";
+            for (let i = 1; i < args.length; i++) {
+                if (args[i].startsWith("<@!")) {
+                id = args[i].slice(3, args[i].length - 1)
+                user = client.users.get(id)
+                msg += " " + user.username;
+                }
+                else if (args[i].startsWith("<@")) {
+                    id = args[i].slice(2, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
+                }
+                else {
+                    msg += " " + args[i];
+                }
+            }
         }
         else {
             msg = "Negi kills " + message.author.username;
@@ -552,7 +507,22 @@ client.on('message', message => {
             "https://imgur.com/fsW1uKM.gif"
         ];
         if (args[1]) {
-            msg = message.author.username + " succ " + message.content.substring(6);
+            msg = message.author.username + " succ";
+            for (let i = 1; i < args.length; i++) {
+                if (args[i].startsWith("<@!")) {
+                id = args[i].slice(3, args[i].length - 1)
+                user = client.users.get(id)
+                msg += " " + user.username;
+                }
+                else if (args[i].startsWith("<@")) {
+                    id = args[i].slice(2, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
+                }
+                else {
+                    msg += " " + args[i];
+                }
+            }
         }
         else {
             msg = "Negi succ " + message.author.username;
@@ -584,7 +554,22 @@ client.on('message', message => {
             "https://imgur.com/FHLRtPM.gif"
         ];
         if (args[1]) {
-            msg = message.author.username + " is stroking " + message.content.substring(8);
+            msg = message.author.username + " strokes";
+            for (let i = 1; i < args.length; i++) {
+                if (args[i].startsWith("<@!")) {
+                id = args[i].slice(3, args[i].length - 1)
+                user = client.users.get(id)
+                msg += " " + user.username;
+                }
+                else if (args[i].startsWith("<@")) {
+                    id = args[i].slice(2, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
+                }
+                else {
+                    msg += " " + args[i];
+                }
+            }
         }
         else {
             msg = "Negi strokes " + message.author.username;
