@@ -357,7 +357,12 @@ client.on('message', message => {
             "https://imgur.com/hs0yJkN.gif",
             "https://imgur.com/oobuDxI.gif",
             "https://imgur.com/MxsWMCS.gif",
-            "https://imgur.com/U0R3yl9.gif"
+            "https://imgur.com/U0R3yl9.gif",
+            "https://imgur.com/Ecbzbhi.gif",
+            "https://imgur.com/RkkLw6p.gif",
+            "https://imgur.com/uCt1mrc.gif",
+            "https://imgur.com/ycj67ME.gif",
+            "https://imgur.com/ddX7P7U.gif"
         ];
         message.channel.send({
             embed: {
@@ -382,7 +387,10 @@ client.on('message', message => {
             "https://imgur.com/uTlNUFO.gif",
             "https://imgur.com/urNYNcF.gif",
             "https://imgur.com/Be1rTkf.gif",
-            "https://i.imgur.com/X52oScm.jpg"
+            "https://i.imgur.com/X52oScm.jpg",
+            "https://imgur.com/xaNkJR8.gif",
+            "https://imgur.com/reIJw1q.gif",
+            "https://imgur.com/r7GZddN.gif"
         ];
         if (args[1]) {
             msg = message.author.username + " is fucking with";
