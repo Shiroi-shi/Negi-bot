@@ -70,8 +70,8 @@ client.on('message', message => {
                     "value": "heal, angry, boop, boost, mada, ameizing, noon, oulala, scatter, sake, genjo, hanzo, mercy, justice"
                 },
                 {
-                    "name": "Reactions",
-                    "value": "gasm, fuck, scream, kill, stroke, succ, dead, bite"
+                    "name": "Reactions/Actions",
+                    "value": "gasm, fuck, scream, kill, stroke, succ, dead, bite, eat"
                 },
                 ]
             }
@@ -657,6 +657,57 @@ client.on('message', message => {
             }
         });
         console.log(message.author.username + " bites");
+    }
+
+    /* eat */
+    if (message.content.startsWith(config.prefix + 'eat')) {
+        let args = message.content.split(' ');
+        let images = [
+            "https://imgur.com/cqKTGor.gif",
+            "https://imgur.com/ecrXzhF.gif",
+            "https://imgur.com/BwACL3Q.gif",
+            "https://imgur.com/ciUfYED.gif",
+            "https://imgur.com/5ScFV5p.gif",
+            "https://imgur.com/QcRAZGc.gif",
+            "https://imgur.com/rdg4Tvt.gif",
+            "https://imgur.com/DgwUeuN.gif",
+            "https://imgur.com/QYjOSvp.gif",
+            "https://imgur.com/ZG5sUV6.gif",
+            "https://imgur.com/2Db73Za.gif"
+        ];
+        if (args[1]) {
+            msg = message.author.username + " gives food to";
+            for (let i = 1; i < args.length; i++) {
+                if (args[i].startsWith("<@!")) {
+                id = args[i].slice(3, args[i].length - 1)
+                user = client.users.get(id)
+                msg += " " + user.username;
+                }
+                else if (args[i].startsWith("<@")) {
+                    id = args[i].slice(2, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
+                }
+                else {
+                    msg += " " + args[i];
+                }
+            }
+        }
+        else {
+            msg = message.author.username + " eats";
+        }
+        message.channel.send({
+            embed: {
+                "color": 1703081,
+                "image": {
+                    "url": images[Math.floor(Math.random() * images.length)]
+                },
+                "author": {
+                    "name": msg,
+                }
+            }
+        });
+        console.log(message.author.username + " eats");
     }
 
 });
