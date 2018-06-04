@@ -64,78 +64,90 @@ client.on('message', message => {
                     "name": config.prefix + "leave",
                     "value": "Leave current voice channel"
                 },
-                    {
-                        "name": config.prefix + "heal",
-                        "value": "I need healing!"
-                    },
-                    {
-                        "name": config.prefix + "angry",
-                        "value": "Why are you so angry?"
-                    },
-                    {
-                        "name": config.prefix + "boop",
-                        "value": "Boop!"
-                    },
-                    {
-                        "name": config.prefix + "boost",
-                        "value": "Speed boost"
-                    },
-                    {
-                        "name": config.prefix + "mada",
-                        "value": "Mada mada"
-                    },
-                    {
-                        "name": config.prefix + "ameizing",
-                        "value": "A-mei-zing"
-                    },
-                    {
-                        "name": config.prefix + "noon",
-                        "value": "It's high noon!"
-                    },
-                    {
-                        "name": config.prefix + "oulala",
-                        "value": "Ouhlala"
-                    },
-                    {
-                        "name": config.prefix + "scatter",
-                        "value": "Scatter!"
-                    },
-                    {
-                        "name": config.prefix + "sake",
-                        "value": "Sake!"
-                    },
-                    {
-                        "name": config.prefix + "genjo",
-                        "value": "Genji ultimate"
-                    },
-                    {
-                        "name": config.prefix + "hanzo",
-                        "value": "Hanzo ultimate"
-                    },
-                    {
-                        "name": config.prefix + "mercy",
-                        "value": "Mercy ultimate"
-                    },
-                    {
-                        "name": config.prefix + "play youtubeURL",
-                        "value": "Play video sound"
-                    },
-                    {
-                        "name": config.prefix + "justice",
-                        "value": "Pharah ultimate"
-                    },
-                    {
-                        "name": config.prefix + "gasm",
-                        "value": "Gasm reaction"
-                    },
-                    {
-                        "name": config.prefix + "fuck",
-                        "value": "( ͡° ͜ʖ ͡° )"
-                    },
-                    {
-                        "name": config.prefix + "scream",
-                        "value": "scream reaction"
-                    }
+                {
+                    "name": config.prefix + "heal",
+                    "value": "I need healing!"
+                },
+                {
+                    "name": config.prefix + "angry",
+                    "value": "Why are you so angry?"
+                },
+                {
+                    "name": config.prefix + "boop",
+                    "value": "Boop!"
+                },
+                {
+                    "name": config.prefix + "boost",
+                    "value": "Speed boost"
+                },
+                {
+                    "name": config.prefix + "mada",
+                    "value": "Mada mada"
+                },
+                {
+                    "name": config.prefix + "ameizing",
+                    "value": "A-mei-zing"
+                },
+                {
+                    "name": config.prefix + "noon",
+                    "value": "It's high noon!"
+                },
+                {
+                    "name": config.prefix + "oulala",
+                    "value": "Ouhlala"
+                },
+                {
+                    "name": config.prefix + "scatter",
+                    "value": "Scatter!"
+                },
+                {
+                    "name": config.prefix + "sake",
+                    "value": "Sake!"
+                },
+                {
+                    "name": config.prefix + "genjo",
+                    "value": "Genji ultimate"
+                },
+                {
+                    "name": config.prefix + "hanzo",
+                    "value": "Hanzo ultimate"
+                },
+                {
+                    "name": config.prefix + "mercy",
+                    "value": "Mercy ultimate"
+                },
+                {
+                    "name": config.prefix + "play youtubeURL",
+                    "value": "Play video sound"
+                },
+                {
+                    "name": config.prefix + "justice",
+                    "value": "Pharah ultimate"
+                },
+                {
+                    "name": config.prefix + "gasm",
+                    "value": "Gasm reaction"
+                },
+                {
+                    "name": config.prefix + "fuck",
+                    "value": "( ͡° ͜ʖ ͡° )"
+                },
+                {
+                    "name": config.prefix + "scream",
+                    "value": "scream reaction"
+                },
+                {
+                    "name": config.prefix + "kill",
+                    "value": "kill reaction"
+                },
+                {
+                    "name": config.prefix + "stroke",
+                    "value": "stroke reaction"
+                },
+                {
+                    "name": config.prefix + "succ",
+                    "value": "succ reaction"
+                },
                 ]
             }
         });
@@ -426,7 +438,7 @@ client.on('message', message => {
             embed: {
                 "color": 1703081,
                 "image": {
-                    "url": images[Math.floor(Math.random()*images.length)]
+                    "url": images[Math.floor(Math.random() * images.length)]
                 },
                 "author": {
                     "name": message.author.username + " is orgasming",
@@ -449,33 +461,123 @@ client.on('message', message => {
             embed: {
                 "color": 1703081,
                 "image": {
-                    "url": images[Math.floor(Math.random()*images.length)]
+                    "url": images[Math.floor(Math.random() * images.length)]
                 },
             }
         });
         console.log(message.author.username + " is fucking");
     }
 
-        /* scream */
-        if (message.content.startsWith(config.prefix + 'scream')) {
-            let images = [
-                "https://imgur.com/UBtHVAy.gif",
-                "https://imgur.com/MrF1Fjc.gif",
-                "https://imgur.com/Ge7eGl8.gif",
-                "https://imgur.com/QtDPZPR.gif",
-                "https://imgur.com/redyuQo.gif",
-                "https://imgur.com/NSjPsYw.gif"
-            ];
-            message.channel.send({
-                embed: {
-                    "color": 1703081,
-                    "image": {
-                        "url": images[Math.floor(Math.random()*images.length)]
-                    },
-                }
-            });
-            console.log(message.author.username + " is screaming");
+    /* scream */
+    if (message.content.startsWith(config.prefix + 'scream')) {
+        let images = [
+            "https://imgur.com/UBtHVAy.gif",
+            "https://imgur.com/MrF1Fjc.gif",
+            "https://imgur.com/Ge7eGl8.gif",
+            "https://imgur.com/QtDPZPR.gif",
+            "https://imgur.com/redyuQo.gif",
+            "https://imgur.com/NSjPsYw.gif"
+        ];
+        message.channel.send({
+            embed: {
+                "color": 1703081,
+                "image": {
+                    "url": images[Math.floor(Math.random() * images.length)]
+                },
+            }
+        });
+        console.log(message.author.username + " is screaming");
+    }
+
+    /* kill */
+    if (message.content.startsWith(config.prefix + 'kill')) {
+        let args = message.content.split(' ');
+        let images = [
+            "https://imgur.com/pNjVzIX.gif",
+            "https://imgur.com/B2GGOWh.gif",
+            "https://imgur.com/kXpsTOy.gif",
+            "https://imgur.com/k0GQrMx.gif",
+            "https://imgur.com/cQTwzIg.gif",
+            "https://imgur.com/G5XQHJq.gif",
+            "https://imgur.com/f7WWFTw.gif",
+            "https://imgur.com/qfCrU9h.gif"
+        ];
+        if (args[1]) {
+            msg = message.author.username + " kill " + message.content.substring(6);
         }
+        else {
+            msg = "Negi kill " + message.author.username;
+        }
+        message.channel.send({
+            embed: {
+                "color": 1703081,
+                "image": {
+                    "url": images[Math.floor(Math.random() * images.length)]
+                },
+                "author": {
+                    "name": msg,
+                }
+            }
+        });
+        console.log(message.author.username + " is killing");
+    }
+
+    /* succ */
+    if (message.content.startsWith(config.prefix + 'succ')) {
+        let args = message.content.split(' ');
+        let images = [
+            "https://imgur.com/YbuTHHo.gif",
+            "https://imgur.com/q0VcBxc.gif",
+            "https://imgur.com/87DTbT1.gif",
+            "https://imgur.com/4hesyl1.gif",
+            "https://imgur.com/vpN7yYJ.gif"
+        ];
+        if (args[1]) {
+            msg = message.author.username + " succ " + message.content.substring(6);
+        }
+        else {
+            msg = "Negi succ " + message.author.username;
+        }
+        message.channel.send({
+            embed: {
+                "color": 1703081,
+                "image": {
+                    "url": images[Math.floor(Math.random() * images.length)]
+                },
+                "author": {
+                    "name": msg,
+                }
+            }
+        });
+        console.log(message.author.username + " is sucking");
+    }
+
+    /* succ */
+    if (message.content.startsWith(config.prefix + 'stroke')) {
+        let images = [
+            "https://imgur.com/0ZtFlXq.gif",
+            "https://imgur.com/NJzmZ0O.gif",
+            "https://imgur.com/Zzx5hFj.gif",
+            "https://imgur.com/ZD6ibNr.gif",
+            "https://imgur.com/i5A9d7T.gif",
+            "https://imgur.com/wkV63dW.gif"
+        ];
+            msg = message.author.username + " is having a stroke";
+        message.channel.send({
+            embed: {
+                "color": 1703081,
+                "image": {
+                    "url": images[Math.floor(Math.random() * images.length)]
+                },
+                "author": {
+                    "name": msg,
+                }
+            }
+        });
+        console.log(message.author.username + " is having a stroke");
+    }
+
+
 });
 
 client.login(config.token);
