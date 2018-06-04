@@ -450,19 +450,30 @@ client.on('message', message => {
 
     /* fuck */
     if (message.content.startsWith(config.prefix + 'fuck')) {
+        let args = message.content.split(' ');
         let images = [
             "https://imgur.com/8Z35ee1.gif",
             "https://imgur.com/Z6aDXfE.gif",
             "https://imgur.com/uTlNUFO.gif",
             "https://imgur.com/urNYNcF.gif",
-            "https://imgur.com/Be1rTkf.gif"
+            "https://imgur.com/Be1rTkf.gif",
+            "https://i.imgur.com/X52oScm.jpg"
         ];
+        if (args[1]) {
+            msg = message.author.username + " is fucking with " + message.content.substring(6);
+        }
+        else {
+            msg = "Negi is fucking with " + message.author.username;
+        }
         message.channel.send({
             embed: {
                 "color": 1703081,
                 "image": {
                     "url": images[Math.floor(Math.random() * images.length)]
                 },
+                "author": {
+                    "name": msg,
+                }
             }
         });
         console.log(message.author.username + " is fucking");
@@ -476,7 +487,8 @@ client.on('message', message => {
             "https://imgur.com/Ge7eGl8.gif",
             "https://imgur.com/QtDPZPR.gif",
             "https://imgur.com/redyuQo.gif",
-            "https://imgur.com/NSjPsYw.gif"
+            "https://imgur.com/NSjPsYw.gif",
+            "https://imgur.com/aR6f82U.gif"
         ];
         message.channel.send({
             embed: {
@@ -484,6 +496,9 @@ client.on('message', message => {
                 "image": {
                     "url": images[Math.floor(Math.random() * images.length)]
                 },
+                "author": {
+                    "name": message.author.username + " is screaming",
+                }
             }
         });
         console.log(message.author.username + " is screaming");
@@ -500,7 +515,10 @@ client.on('message', message => {
             "https://imgur.com/cQTwzIg.gif",
             "https://imgur.com/G5XQHJq.gif",
             "https://imgur.com/f7WWFTw.gif",
-            "https://imgur.com/qfCrU9h.gif"
+            "https://imgur.com/qfCrU9h.gif",
+            "https://imgur.com/cr4PvGP.gif",
+            "https://imgur.com/ymcJiS9.gif",
+            "https://imgur.com/UPmlUjQ.gif"
         ];
         if (args[1]) {
             msg = message.author.username + " kills " + message.content.substring(6);
@@ -530,7 +548,8 @@ client.on('message', message => {
             "https://imgur.com/q0VcBxc.gif",
             "https://imgur.com/87DTbT1.gif",
             "https://imgur.com/4hesyl1.gif",
-            "https://imgur.com/vpN7yYJ.gif"
+            "https://imgur.com/vpN7yYJ.gif",
+            "https://imgur.com/fsW1uKM.gif"
         ];
         if (args[1]) {
             msg = message.author.username + " succ " + message.content.substring(6);
@@ -565,7 +584,7 @@ client.on('message', message => {
             "https://imgur.com/FHLRtPM.gif"
         ];
         if (args[1]) {
-            msg = message.author.username + " is stroking " + message.content.substring(6);
+            msg = message.author.username + " is stroking " + message.content.substring(8);
         }
         else {
             msg = "Negi strokes " + message.author.username;
@@ -584,6 +603,76 @@ client.on('message', message => {
         console.log(message.author.username + " is stroking");
     }
 
+    /* dead */
+    if (message.content.startsWith(config.prefix + 'dead')) {
+        let images = [
+            "https://imgur.com/m3NYMZt.gif",
+            "https://imgur.com/uTfBuPF.gif",
+            "https://imgur.com/Ngt33Gz.gif",
+            "https://imgur.com/trpOo5a.gif",
+            "https://imgur.com/bfOR0lj.gif"
+        ];
+        message.channel.send({
+            embed: {
+                "color": 1703081,
+                "image": {
+                    "url": images[Math.floor(Math.random() * images.length)]
+                },
+                "author": {
+                    "name": message.author.username + " is dead",
+                }
+            }
+        });
+        console.log(message.author.username + " is dead");
+    }
+
+    /* bite */
+    if (message.content.startsWith(config.prefix + 'bite')) {
+        let args = message.content.split(' ');
+        let images = [
+            "https://imgur.com/oOv4IPN.gif",
+            "https://imgur.com/sASlOCE.gif",
+            "https://imgur.com/NK0Uy5N.gif",
+            "https://imgur.com/IEWTMDT.gif",
+            "https://imgur.com/AtiZI76.gif",
+            "https://imgur.com/fscyd7Z.gif",
+            "https://imgur.com/gSm5uqP.gif",
+            "https://imgur.com/AVuSUtP.gif"
+        ];
+        if (args[1]) {
+            msg = message.author.username + " bites";
+            for (let i = 1; i < args.length; i++) {
+                if (args[i].startsWith("<@!")) {
+                id = agrs[i].slice(3, args[i].length - 1)
+                user = client.users.get(id)
+                msg += " " + user.username;
+                }
+                else if (args[i].startsWith("<@")) {
+                    id = agrs[i].slice(2, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
+                }
+                else {
+                    msg += " " + args[i];
+                }
+            }
+        }
+        else {
+            msg = "Negi bites " + message.author.username;
+        }
+        message.channel.send({
+            embed: {
+                "color": 1703081,
+                "image": {
+                    "url": images[Math.floor(Math.random() * images.length)]
+                },
+                "author": {
+                    "name": msg,
+                }
+            }
+        });
+        console.log(message.author.username + " bites");
+    }
 
 });
 
