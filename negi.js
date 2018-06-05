@@ -71,7 +71,7 @@ client.on('message', message => {
                 },
                 {
                     "name": "Reactions/Actions",
-                    "value": "gasm, fuck, scream, kill, stroke, succ, dead, bite, eat, smug, glare, lick, kiss"
+                    "value": "gasm, fuck, scream, kill, stroke, succ, dead, bite, eat, smug, glare, lick, kiss, poke, slap, surprised"
                 },
                 ]
             }
@@ -396,9 +396,9 @@ client.on('message', message => {
             msg = message.author.username + " is fucking with";
             for (let i = 1; i < args.length; i++) {
                 if (args[i].startsWith("<@!")) {
-                id = args[i].slice(3, args[i].length - 1)
-                user = client.users.get(id)
-                msg += " " + user.username;
+                    id = args[i].slice(3, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
                 }
                 else if (args[i].startsWith("<@")) {
                     id = args[i].slice(2, args[i].length - 1)
@@ -466,15 +466,16 @@ client.on('message', message => {
             "https://imgur.com/qfCrU9h.gif",
             "https://imgur.com/cr4PvGP.gif",
             "https://imgur.com/ymcJiS9.gif",
-            "https://imgur.com/UPmlUjQ.gif"
+            "https://imgur.com/UPmlUjQ.gif",
+            "https://imgur.com/MTaEwme.gif"
         ];
         if (args[1]) {
             msg = message.author.username + " kills";
             for (let i = 1; i < args.length; i++) {
                 if (args[i].startsWith("<@!")) {
-                id = args[i].slice(3, args[i].length - 1)
-                user = client.users.get(id)
-                msg += " " + user.username;
+                    id = args[i].slice(3, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
                 }
                 else if (args[i].startsWith("<@")) {
                     id = args[i].slice(2, args[i].length - 1)
@@ -519,9 +520,9 @@ client.on('message', message => {
             msg = message.author.username + " succ";
             for (let i = 1; i < args.length; i++) {
                 if (args[i].startsWith("<@!")) {
-                id = args[i].slice(3, args[i].length - 1)
-                user = client.users.get(id)
-                msg += " " + user.username;
+                    id = args[i].slice(3, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
                 }
                 else if (args[i].startsWith("<@")) {
                     id = args[i].slice(2, args[i].length - 1)
@@ -566,9 +567,9 @@ client.on('message', message => {
             msg = message.author.username + " strokes";
             for (let i = 1; i < args.length; i++) {
                 if (args[i].startsWith("<@!")) {
-                id = args[i].slice(3, args[i].length - 1)
-                user = client.users.get(id)
-                msg += " " + user.username;
+                    id = args[i].slice(3, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
                 }
                 else if (args[i].startsWith("<@")) {
                     id = args[i].slice(2, args[i].length - 1)
@@ -637,9 +638,9 @@ client.on('message', message => {
             msg = message.author.username + " bites";
             for (let i = 1; i < args.length; i++) {
                 if (args[i].startsWith("<@!")) {
-                id = args[i].slice(3, args[i].length - 1)
-                user = client.users.get(id)
-                msg += " " + user.username;
+                    id = args[i].slice(3, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
                 }
                 else if (args[i].startsWith("<@")) {
                     id = args[i].slice(2, args[i].length - 1)
@@ -688,9 +689,9 @@ client.on('message', message => {
             msg = message.author.username + " gives food to";
             for (let i = 1; i < args.length; i++) {
                 if (args[i].startsWith("<@!")) {
-                id = args[i].slice(3, args[i].length - 1)
-                user = client.users.get(id)
-                msg += " " + user.username;
+                    id = args[i].slice(3, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
                 }
                 else if (args[i].startsWith("<@")) {
                     id = args[i].slice(2, args[i].length - 1)
@@ -804,9 +805,9 @@ client.on('message', message => {
             msg = message.author.username + " licks";
             for (let i = 1; i < args.length; i++) {
                 if (args[i].startsWith("<@!")) {
-                id = args[i].slice(3, args[i].length - 1)
-                user = client.users.get(id)
-                msg += " " + user.username;
+                    id = args[i].slice(3, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
                 }
                 else if (args[i].startsWith("<@")) {
                     id = args[i].slice(2, args[i].length - 1)
@@ -855,9 +856,9 @@ client.on('message', message => {
             msg = message.author.username + " kiss";
             for (let i = 1; i < args.length; i++) {
                 if (args[i].startsWith("<@!")) {
-                id = args[i].slice(3, args[i].length - 1)
-                user = client.users.get(id)
-                msg += " " + user.username;
+                    id = args[i].slice(3, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
                 }
                 else if (args[i].startsWith("<@")) {
                     id = args[i].slice(2, args[i].length - 1)
@@ -884,6 +885,180 @@ client.on('message', message => {
             }
         });
         console.log(message.author.username + " kiss");
+    }
+
+    /* flip */
+    if (message.content.startsWith(config.prefix + 'flip')) {
+        let images = [
+            "https://imgur.com/4U90wUo.gif",
+            "https://imgur.com/h650Rsc.gif",
+            "https://imgur.com/w5ZXnHw.gif",
+            "https://imgur.com/8QhCY2q.gif"
+        ];
+        message.channel.send({
+            embed: {
+                "color": 1703081,
+                "image": {
+                    "url": images[Math.floor(Math.random() * images.length)]
+                },
+                "author": {
+                    "name": message.author.username + " flip a table",
+                }
+            }
+        });
+        console.log(message.author.username + " flip a table");
+    }
+
+    /* surprised */
+    if (message.content.startsWith(config.prefix + 'surprised')) {
+        let images = [
+            "https://imgur.com/84faa8P.gif",
+            "https://imgur.com/eq1kwFE.gif",
+            "https://imgur.com/PtLZWOn.gif",
+            "https://imgur.com/iSAuw4y.gif",
+            "https://imgur.com/sO8GgS3.gif",
+            "https://imgur.com/X4S4NU7.gif",
+            "https://imgur.com/CX9wBaq.gif",
+            "https://imgur.com/bW9MyKR.gif",
+            "https://imgur.com/OmDERLx.gif",
+            "https://imgur.com/OdP8jZn.gif",
+            "https://imgur.com/vwV5qhR.gif",
+            "https://imgur.com/VjehZGR.gif",
+            "https://imgur.com/cijpI7o.gif",
+            "https://imgur.com/2Kt6jfF.gif"
+        ];
+        message.channel.send({
+            embed: {
+                "color": 1703081,
+                "image": {
+                    "url": images[Math.floor(Math.random() * images.length)]
+                },
+                "author": {
+                    "name": message.author.username + " is surprised",
+                }
+            }
+        });
+        console.log(message.author.username + " is surprised");
+    }
+
+    /* slap */
+    if (message.content.startsWith(config.prefix + 'slap')) {
+        let args = message.content.split(' ');
+        let images = [
+            "https://imgur.com/8dQoqtY.gif",
+            "https://imgur.com/Ocjp5KB.gif",
+            "https://imgur.com/CNyJaEt.gif",
+            "https://imgur.com/u9dkJOK.gif",
+            "https://imgur.com/2oB0iQn.gif",
+            "https://imgur.com/U4aW6jC.gif",
+            "https://imgur.com/ki3fvEU.gif",
+            "https://imgur.com/Dkxkp6X.gif",
+            "https://imgur.com/vPdAhtY.gif",
+            "https://imgur.com/2it8LW3.gif",
+            "https://imgur.com/MXdNupt.gif",
+            "https://imgur.com/6aYKlB7.gif",
+            "https://imgur.com/Z9nBTJo.gif",
+            "https://imgur.com/QIVpTWj.gif",
+            "https://imgur.com/xy3Epuj.gif",
+            "https://imgur.com/2XNgv53.gif",
+            "https://imgur.com/VgU0ltI.gif",
+            "https://imgur.com/9FTtWBv.gif",
+            "https://imgur.com/3eAz9OW.gif"
+        ];
+        if (args[1]) {
+            msg = message.author.username + " slap";
+            for (let i = 1; i < args.length; i++) {
+                if (args[i].startsWith("<@!")) {
+                    id = args[i].slice(3, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
+                }
+                else if (args[i].startsWith("<@")) {
+                    id = args[i].slice(2, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
+                }
+                else {
+                    msg += " " + args[i];
+                }
+            }
+        }
+        else {
+            msg = "Negi slap " + message.author.username;
+        }
+        message.channel.send({
+            embed: {
+                "color": 1703081,
+                "image": {
+                    "url": images[Math.floor(Math.random() * images.length)]
+                },
+                "author": {
+                    "name": msg,
+                }
+            }
+        });
+        console.log(message.author.username + " slap");
+    }
+
+    /* poke */
+    if (message.content.startsWith(config.prefix + 'poke')) {
+        let args = message.content.split(' ');
+        let images = [
+            "https://imgur.com/xgUKcti.gif",
+            "https://imgur.com/taFKFYK.gif",
+            "https://imgur.com/BwI9jlI.gif",
+            "https://imgur.com/9A9pU58.gif",
+            "https://imgur.com/5QnPpGa.gif",
+            "https://imgur.com/fhvnx1t.gif",
+            "https://imgur.com/Lw3nmaK.gif",
+            "https://imgur.com/SUDkIGy.gif",
+            "https://imgur.com/Zsa3gep.gif",
+            "https://imgur.com/e3Q7pl3.gif",
+            "https://imgur.com/WUsOdb0.gif",
+            "https://imgur.com/23R6UP6.gif",
+            "https://imgur.com/WQClQUd.gif",
+            "https://imgur.com/2pHfxFR.gif",
+            "https://imgur.com/2LtXl1k.gif",
+            "https://imgur.com/vUEyWU8.gif",
+            "https://imgur.com/MKCHvGh.gif",
+            "https://imgur.com/C4UEIMU.gif",
+            "https://imgur.com/R3qeYS9.gif",
+            "https://imgur.com/dDl3fY9.gif",
+            "https://imgur.com/cwrgTOq.gif"
+        ];
+        if (args[1]) {
+            msg = message.author.username + " pokes";
+            for (let i = 1; i < args.length; i++) {
+                if (args[i].startsWith("<@!")) {
+                    id = args[i].slice(3, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
+                }
+                else if (args[i].startsWith("<@")) {
+                    id = args[i].slice(2, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
+                }
+                else {
+                    msg += " " + args[i];
+                }
+            }
+        }
+        else {
+            msg = "Negi pokes " + message.author.username;
+        }
+        message.channel.send({
+            embed: {
+                "color": 1703081,
+                "image": {
+                    "url": images[Math.floor(Math.random() * images.length)]
+                },
+                "author": {
+                    "name": msg,
+                }
+            }
+        });
+        console.log(message.author.username + " pokes");
     }
 
 });
