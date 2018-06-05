@@ -552,7 +552,7 @@ client.on('message', message => {
     }
 
     /* stroke */
-    if (message.content.startsWith(config.prefix + 'stroke')) {
+    if (message.content.startsWith(config.prefix + 'stroke') || message.content.startsWith(config.prefix + 'pat')) {
         let args = message.content.split(' ');
         let images = [
             "https://imgur.com/Yh7BfUj.gif",
