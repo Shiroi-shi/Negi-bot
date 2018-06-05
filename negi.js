@@ -71,7 +71,7 @@ client.on('message', message => {
                 },
                 {
                     "name": "Reactions/Actions",
-                    "value": "gasm, fuck, scream, kill, stroke, succ, dead, bite, eat, smug, glare"
+                    "value": "gasm, fuck, scream, kill, stroke, succ, dead, bite, eat, smug, glare, lick, kiss"
                 },
                 ]
             }
@@ -512,7 +512,8 @@ client.on('message', message => {
             "https://imgur.com/87DTbT1.gif",
             "https://imgur.com/4hesyl1.gif",
             "https://imgur.com/vpN7yYJ.gif",
-            "https://imgur.com/fsW1uKM.gif"
+            "https://imgur.com/fsW1uKM.gif",
+            "https://imgur.com/8kUQTOB.gif"
         ];
         if (args[1]) {
             msg = message.author.username + " succ";
@@ -734,7 +735,8 @@ client.on('message', message => {
             "https://imgur.com/wpeDUUW.gif",
             "https://imgur.com/7F1FrwK.gif",
             "https://imgur.com/qGPJNA2.gif",
-            "https://imgur.com/w2TUADR.gif"
+            "https://imgur.com/w2TUADR.gif",
+            "https://imgur.com/awtqs1Y.gif"
         ];
         message.channel.send({
             embed: {
@@ -771,6 +773,117 @@ client.on('message', message => {
             }
         });
         console.log(message.author.username + " glare");
+    }
+
+    /* lick */
+    if (message.content.startsWith(config.prefix + 'lick')) {
+        let args = message.content.split(' ');
+        let images = [
+            "https://imgur.com/HQV3MjW.gif",
+            "https://imgur.com/jpsF1d6.gif",
+            "https://imgur.com/hmzymDS.gif",
+            "https://imgur.com/a7zZRgx.gif",
+            "https://imgur.com/p5doHTF.gif",
+            "https://imgur.com/fBYFAan.gif",
+            "https://imgur.com/tuobIS2.gif",
+            "https://imgur.com/RYRrHZl.gif",
+            "https://imgur.com/SmCgRKc.gif",
+            "https://imgur.com/frufXkB.gif",
+            "https://imgur.com/11LHvr2.gif",
+            "https://imgur.com/uaV1LC9.gif",
+            "https://imgur.com/j2l86Ac.gif",
+            "https://imgur.com/sH8uy5G.gif",
+            "https://imgur.com/SLmLptJ.gif",
+            "https://imgur.com/g1aW6Mi.gif",
+            "https://imgur.com/MEQTGM1.gif",
+            "https://imgur.com/y5POp1M.gif",
+            "https://imgur.com/3TUdSXd.gif",
+            "https://imgur.com/Xz24icI.gif"
+        ];
+        if (args[1]) {
+            msg = message.author.username + " licks";
+            for (let i = 1; i < args.length; i++) {
+                if (args[i].startsWith("<@!")) {
+                id = args[i].slice(3, args[i].length - 1)
+                user = client.users.get(id)
+                msg += " " + user.username;
+                }
+                else if (args[i].startsWith("<@")) {
+                    id = args[i].slice(2, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
+                }
+                else {
+                    msg += " " + args[i];
+                }
+            }
+        }
+        else {
+            msg = "Negi licks " + message.author.username;
+        }
+        message.channel.send({
+            embed: {
+                "color": 1703081,
+                "image": {
+                    "url": images[Math.floor(Math.random() * images.length)]
+                },
+                "author": {
+                    "name": msg,
+                }
+            }
+        });
+        console.log(message.author.username + " lick");
+    }
+
+    /* kiss */
+    if (message.content.startsWith(config.prefix + 'kiss')) {
+        let args = message.content.split(' ');
+        let images = [
+            "https://imgur.com/0Crstey.gif",
+            "https://imgur.com/eAt2G4Z.gif",
+            "https://imgur.com/rKOivER.gif",
+            "https://imgur.com/yRHJwo7.gif",
+            "https://imgur.com/NWnEJRq.gif",
+            "https://imgur.com/F8lEwZ8.gif",
+            "https://imgur.com/i1Wml1Z.gif",
+            "https://imgur.com/RzKIyav.gif",
+            "https://imgur.com/fYh6mcv.gif",
+            "https://imgur.com/XG2GuuT.gif",
+            "https://imgur.com/sPmBTFf.gif"
+        ];
+        if (args[1]) {
+            msg = message.author.username + " kiss";
+            for (let i = 1; i < args.length; i++) {
+                if (args[i].startsWith("<@!")) {
+                id = args[i].slice(3, args[i].length - 1)
+                user = client.users.get(id)
+                msg += " " + user.username;
+                }
+                else if (args[i].startsWith("<@")) {
+                    id = args[i].slice(2, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
+                }
+                else {
+                    msg += " " + args[i];
+                }
+            }
+        }
+        else {
+            msg = "Negi kiss " + message.author.username;
+        }
+        message.channel.send({
+            embed: {
+                "color": 1703081,
+                "image": {
+                    "url": images[Math.floor(Math.random() * images.length)]
+                },
+                "author": {
+                    "name": msg,
+                }
+            }
+        });
+        console.log(message.author.username + " kiss");
     }
 
 });
