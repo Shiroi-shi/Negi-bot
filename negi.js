@@ -71,7 +71,7 @@ client.on('message', message => {
                 },
                 {
                     "name": "Reactions/Actions",
-                    "value": "gasm, fuck, scream, kill, stroke, succ, dead, bite, eat, smug, glare, lick, kiss, poke, slap, surprised"
+                    "value": "gasm, fuck, scream, kill, stroke, succ, dead, bite, eat, smug, glare, lick, kiss, poke, slap, surprised, hi"
                 },
                 ]
             }
@@ -683,7 +683,8 @@ client.on('message', message => {
             "https://imgur.com/DgwUeuN.gif",
             "https://imgur.com/QYjOSvp.gif",
             "https://imgur.com/ZG5sUV6.gif",
-            "https://imgur.com/2Db73Za.gif"
+            "https://imgur.com/2Db73Za.gif",
+            "https://imgur.com/Of4peJk.gif"
         ];
         if (args[1]) {
             msg = message.author.username + " gives food to";
@@ -1059,6 +1060,56 @@ client.on('message', message => {
             }
         });
         console.log(message.author.username + " pokes");
+    }
+
+    /* hi */
+    if (message.content.startsWith(config.prefix + 'hi')) {
+        let args = message.content.split(' ');
+        let images = [
+            "https://imgur.com/CnmiWxs.gif",
+            "https://imgur.com/2g8RRkX.gif",
+            "https://imgur.com/8jurUZ9.gif",
+            "https://imgur.com/yEfvY1q.gif",
+            "https://imgur.com/B2eCvqq.gif",
+            "https://imgur.com/0XCYgUG.gif",
+            "https://imgur.com/V05gh9e.gif",
+            "https://imgur.com/uZmObbl.gif",
+            "https://imgur.com/rXkSzGG.gif",
+            "https://imgur.com/r3m1d2f.gif"
+        ];
+        if (args[1]) {
+            msg = message.author.username + " says hi to";
+            for (let i = 1; i < args.length; i++) {
+                if (args[i].startsWith("<@!")) {
+                    id = args[i].slice(3, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
+                }
+                else if (args[i].startsWith("<@")) {
+                    id = args[i].slice(2, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
+                }
+                else {
+                    msg += " " + args[i];
+                }
+            }
+        }
+        else {
+            msg = message.author.username + " says hi";
+        }
+        message.channel.send({
+            embed: {
+                "color": 1703081,
+                "image": {
+                    "url": images[Math.floor(Math.random() * images.length)]
+                },
+                "author": {
+                    "name": msg,
+                }
+            }
+        });
+        console.log(message.author.username + " kiss");
     }
 
 });
