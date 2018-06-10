@@ -1109,7 +1109,35 @@ client.on('message', message => {
                 }
             }
         });
-        console.log(message.author.username + " kiss");
+        console.log(message.author.username + " hi");
+    }
+
+    /* noons */
+    if (message.content.startsWith(config.prefix + 'boobs') || message.content.startsWith(config.prefix + 'oppai')) {
+        let images = [
+            "https://imgur.com/fTDXpLa.gif",
+            "https://imgur.com/S4anqAw.gif",
+            "https://imgur.com/0beje5W.gif",
+            "https://imgur.com/v4svLQD.gif",
+            "https://imgur.com/A4qlSQL.gif",
+            "https://imgur.com/7FpOXNr.gif",
+            "https://imgur.com/WhGNSAI.gif",
+            "https://imgur.com/V750eFY.gif",
+            "https://imgur.com/c6LrVQw.gif",
+            "https://imgur.com/bAeytse.gif",
+            "https://imgur.com/fCbqVZV.gif",
+            "https://imgur.com/gTDeiQa.gif",
+            "https://imgur.com/9SdrKjN.gif"
+        ];
+        message.channel.send({
+            embed: {
+                "color": 1703081,
+                "image": {
+                    "url": images[Math.floor(Math.random() * images.length)]
+                },
+            }
+        });
+        console.log(message.author.username + " boobs");
     }
 
 });
