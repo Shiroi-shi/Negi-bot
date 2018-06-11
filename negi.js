@@ -1174,7 +1174,7 @@ client.on('message', message => {
                     msg += " " + args[i];
                 }
             }
-            msg += " is under arrest";
+            msg += " is under arrest /!\\";
         }
         else {
             msg = message.author.username + " is calling the police";
