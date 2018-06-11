@@ -1112,7 +1112,7 @@ client.on('message', message => {
         console.log(message.author.username + " hi");
     }
 
-    /* boons */
+    /* boobs */
     if (message.content.startsWith(config.prefix + 'boobs') || message.content.startsWith(config.prefix + 'oppai')) {
         let images = [
             "https://imgur.com/fTDXpLa.gif",
@@ -1140,7 +1140,7 @@ client.on('message', message => {
         console.log(message.author.username + " boobs");
     }
 
-    /* bite */
+    /* cops */
     if (message.content.startsWith(config.prefix + 'cops')) {
         let args = message.content.split(' ');
         let images = [
@@ -1158,7 +1158,7 @@ client.on('message', message => {
             "https://imgur.com/M9D1n4A.png"
         ];
         if (args[1]) {
-            let msg = "";
+            msg = "/!\\";
             for (let i = 1; i < args.length; i++) {
                 if (args[i].startsWith("<@!")) {
                     id = args[i].slice(3, args[i].length - 1)
