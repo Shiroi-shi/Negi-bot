@@ -1112,7 +1112,7 @@ client.on('message', message => {
         console.log(message.author.username + " hi");
     }
 
-    /* noons */
+    /* boons */
     if (message.content.startsWith(config.prefix + 'boobs') || message.content.startsWith(config.prefix + 'oppai')) {
         let images = [
             "https://imgur.com/fTDXpLa.gif",
@@ -1138,6 +1138,59 @@ client.on('message', message => {
             }
         });
         console.log(message.author.username + " boobs");
+    }
+
+    /* bite */
+    if (message.content.startsWith(config.prefix + 'cops')) {
+        let args = message.content.split(' ');
+        let images = [
+            "https://imgur.com/aiIeBp3.png",
+            "https://imgur.com/Cyf10WJ.png",
+            "https://imgur.com/wEpiF98.gif",
+            "https://imgur.com/pgJGHhs.gif",
+            "https://imgur.com/F4F0Etw.png",
+            "https://imgur.com/Pq7wT23.png",
+            "https://imgur.com/rwCYSuV.gif",
+            "https://imgur.com/IQsNpyu.gif",
+            "https://imgur.com/FHNR78P.gif",
+            "https://imgur.com/CU2ozFP.gif",
+            "https://imgur.com/pgE47gC.gif",
+            "https://imgur.com/M9D1n4A.png"
+        ];
+        if (args[1]) {
+            let msg = "";
+            for (let i = 1; i < args.length; i++) {
+                if (args[i].startsWith("<@!")) {
+                    id = args[i].slice(3, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
+                }
+                else if (args[i].startsWith("<@")) {
+                    id = args[i].slice(2, args[i].length - 1)
+                    user = client.users.get(id)
+                    msg += " " + user.username;
+                }
+                else {
+                    msg += " " + args[i];
+                }
+            }
+            msg += " is under arrest";
+        }
+        else {
+            msg = message.author.username + " is calling the police";
+        }
+        message.channel.send({
+            embed: {
+                "color": 1703081,
+                "image": {
+                    "url": images[Math.floor(Math.random() * images.length)]
+                },
+                "author": {
+                    "name": msg,
+                }
+            }
+        });
+        console.log(message.author.username + " is calling the police");
     }
 
 });
