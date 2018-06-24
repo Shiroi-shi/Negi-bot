@@ -65,14 +65,14 @@ client.on('message', message => {
                     "name": "Voice channels",
                     "value": "join, leave"
                 },
-                {
-                    "name": "Voice sounds",
-                    "value": "heal, angry, boop, boost, mada, ameizing, noon, oulala, scatter, sake, genjo, hanzo, mercy, justice"
-                },
-                {
-                    "name": "Reactions/Actions",
-                    "value": "gasm, fuck, scream, kill, stroke, succ, dead, bite, eat, smug, glare, lick, kiss, poke, slap, surprised, hi"
-                },
+                    {
+                        "name": "Voice sounds",
+                        "value": "heal, angry, boop, boost, mada, ameizing, noon, oulala, scatter, sake, genjo, hanzo, mercy, justice"
+                    },
+                    {
+                        "name": "Reactions/Actions",
+                        "value": "gasm, fuck, scream, kill, stroke, succ, dead, bite, eat, smug, glare, lick, kiss, poke, slap, surprised, hi, cops, bleed"
+                    },
                 ]
             }
         });
@@ -1255,6 +1255,38 @@ client.on('message', message => {
             }
         });
         console.log(message.author.username + " hugs");
+    }
+
+    /* nosebleed */
+    if (message.content.startsWith(config.prefix + 'bleed')) {
+        let images = [
+            "https://imgur.com/ajUadyQ.gif",
+            "https://imgur.com/yIVXVeH.gif",
+            "https://imgur.com/IHl9KzG.gif",
+            "https://imgur.com/2TpeDfy.gif",
+            "https://imgur.com/ExEYTQP.gif",
+            "https://imgur.com/Uw4Lwup.gif",
+            "https://imgur.com/9ZNOSB3.gif",
+            "https://imgur.com/GF98TiK.gif",
+            "https://imgur.com/4K4jFbW.gif",
+            "https://imgur.com/P16dPOA.gif",
+            "https://imgur.com/83LvGT0.gif",
+            "https://imgur.com/oBPG9EN.gif",
+            "https://imgur.com/bMPdwTQ.gif",
+            "https://imgur.com/Mmfayoy.gif"
+        ];
+        message.channel.send({
+            embed: {
+                "color": 1703081,
+                "image": {
+                    "url": images[Math.floor(Math.random() * images.length)]
+                },
+                "author": {
+                    "name": message.author.username + " is got a nosebleed",
+                }
+            }
+        });
+        console.log(message.author.username + " is nosebleeding");
     }
 
 });
