@@ -1282,7 +1282,7 @@ client.on('message', message => {
                     "url": images[Math.floor(Math.random() * images.length)]
                 },
                 "author": {
-                    "name": message.author.username + " is got a nosebleed",
+                    "name": message.author.username + " got a nosebleed",
                 }
             }
         });
