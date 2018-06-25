@@ -557,11 +557,14 @@ client.on('message', message => {
         let images = [
             "https://imgur.com/Yh7BfUj.gif",
             "https://imgur.com/gzFtMFV.gif",
-            "https://imgur.com/5MTuiF5.gif",
             "https://imgur.com/ZOzYlvt.gif",
             "https://imgur.com/ZhD6TNb.gif",
             "https://imgur.com/JcXw7yq.gif",
-            "https://imgur.com/FHLRtPM.gif"
+            "https://imgur.com/FHLRtPM.gif",
+            "https://imgur.com/wXw7IjY.gif",
+            "https://imgur.com/xbqhigm.gif",
+            "https://imgur.com/Q8i2yZz.gif",
+            "https://imgur.com/0SBqpld.gif"
         ];
         if (args.length > 1) {
             msg = message.author.username + " strokes";
@@ -843,7 +846,6 @@ client.on('message', message => {
         let images = [
             "https://imgur.com/0Crstey.gif",
             "https://imgur.com/eAt2G4Z.gif",
-            "https://imgur.com/rKOivER.gif",
             "https://imgur.com/yRHJwo7.gif",
             "https://imgur.com/NWnEJRq.gif",
             "https://imgur.com/F8lEwZ8.gif",
@@ -851,7 +853,10 @@ client.on('message', message => {
             "https://imgur.com/RzKIyav.gif",
             "https://imgur.com/fYh6mcv.gif",
             "https://imgur.com/XG2GuuT.gif",
-            "https://imgur.com/sPmBTFf.gif"
+            "https://imgur.com/sPmBTFf.gif",
+            "https://imgur.com/wx3WXZu.gif",
+            "https://imgur.com/IVOBC8p.gif",
+            "https://imgur.com/Bftud8V.gif"
         ];
         if (args.length > 1) {
             msg = message.author.username + " kiss";
@@ -1075,7 +1080,9 @@ client.on('message', message => {
             "https://imgur.com/V05gh9e.gif",
             "https://imgur.com/uZmObbl.gif",
             "https://imgur.com/rXkSzGG.gif",
-            "https://imgur.com/r3m1d2f.gif"
+            "https://imgur.com/r3m1d2f.gif",
+            "https://imgur.com/AEPIP0T.gif",
+            "https://imgur.com/EAiwBOq.gif"
         ];
         if (args.length > 1) {
             msg = message.author.username + " says hi to";
